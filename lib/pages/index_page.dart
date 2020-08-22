@@ -6,6 +6,7 @@ import 'package:flutter_shop/pages/memeber_page.dart';
 import 'package:flutter_shop/provide/current_index_provide.dart';
 import 'package:provide/provide.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IndexPage extends StatelessWidget {
   final List<BottomNavigationBarItem> bottomTabs = [
@@ -28,6 +29,8 @@ class IndexPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //一定在MaterialApp的home中的页面设置(即入口文件，只需设置一次),
+    ScreenUtil.init(context);
     return Provide<CurrentIndexProvide>(
       builder: (context, child, value) {
         //取到当前索引状态值
